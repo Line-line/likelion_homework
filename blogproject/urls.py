@@ -30,7 +30,12 @@ urlpatterns = [
     path('blog/create', blog.views.create, name="create"),      # path만들었다고 html만 부르는것뿐만이 아니라 함수를 불러 줄 수 있다.
     path('blog/edit/<int:blog_id>', blog.views.edit, name="edit"),
     path('blog/delete/<int:blog_id>', blog.views.delete, name="delete"),
-    
+
+    # 댓글
+    path('blog/comment_add/<int:blog_id>', blog.views.comment_add, name='comment_add'),
+    path('blog/comment_edit/<int:comment_id>', blog.views.comment_edit, name='comment_edit'),
+    # path('blog/comment_delete/<int:comment_id>', blog.views.comment_delete, name='comment_delete'),
+
     path('portfolio/', portfolio.views.portfolio, name="portfolio"),
 
     path('accounts/signup/', accounts.views.signup, name = 'signup'),
